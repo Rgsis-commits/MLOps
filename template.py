@@ -17,10 +17,13 @@ list_of_files =[
     "src/pipeline/training_pipeline.py",
     "src/pipeline/prediction_pipeline.py",
     # For utility
-    "src/pipeline/utils.py",
+    "src/utils/__init__.py",
+    "src/utils/utils.py",
     # For logs
+    "src/logger/__init__.py",
     "src/logger/logging.py",
     # For exception
+    "src/exception/__init__.py",
     "src/exception/exception.py",
     # Test case
     "tests/unit/__init__.py",
