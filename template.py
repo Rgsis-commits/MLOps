@@ -37,20 +37,23 @@ list_of_files =[
     "setup.cfg",
     "pyproject.toml",
     "tox.ini",
+    "test.py",
     "experiment/experiments.ipynb"
 ]
 
-# To Create all these above files
+# Create directories and files
 for filepath in list_of_files:
     filepath = Path(filepath)
     filedir, filename = os.path.split(filepath)
-    if filedir != "":
+    
+    # Create the directory if it does not exist
+    if filedir:
         os.makedirs(filedir, exist_ok=True)
-        #logging.info(f"Creating directory: {filedir} for file: {filename}")
 
-        if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
-            with open(filepath, "w") as f:
-               pass # create an empty file
+    # Create the file if it does not exist or is empty
+    if not os.path.exists(filepath) or os.path.getsize(filepath) == 0:
+        with open(filepath, "w") as f:
+            pass  # Create an empty file
                
            
 
